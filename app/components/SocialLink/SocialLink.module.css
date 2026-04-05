@@ -1,0 +1,51 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  right: 0;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.label {
+  letter-spacing: -0.01em;
+}
