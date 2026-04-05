@@ -158,7 +158,7 @@ export default function Home() {
             />
             <SocialLink
               href="mailto:alpha.diop@outlook.com"
-              label="alpha.diop@outlook.com"
+              label="Email"
               icon={<GmailIcon />}
             />
           </div>

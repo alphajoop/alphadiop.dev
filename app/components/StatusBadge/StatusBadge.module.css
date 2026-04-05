@@ -59,3 +59,10 @@
     opacity: 0;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .available .pulse {
+    animation: none;
+    opacity: 0;
+  }
+}

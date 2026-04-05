@@ -76,6 +76,14 @@
   gap: var(--space-5);
 }
 
+.footerLinks a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footerLinks a:hover span {
+  color: var(--color-text-secondary);
+}
+
 @media (max-width: 640px) {
   .page {
     gap: var(--space-12);
