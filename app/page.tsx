@@ -64,14 +64,7 @@ function GmailIcon() {
   return <BrandIcon icon={siGmail} size={14} />;
 }
 
-const projects = [
-  {
-    title: "Open USSD SN",
-    description:
-      "Open database of USSD codes used across mobile services in Senegal. Simplifies access to Mobile Money and telecom interactions in a fragmented ecosystem.",
-    tags: ["CSV", "Next.js", "TypeScript", "Tailwind"],
-    href: "https://github.com/alphajoop/open-ussd-sn",
-  },
+const featuredProjects = [
   {
     title: "Galsen Streak",
     description:
@@ -80,11 +73,35 @@ const projects = [
     href: "https://github.com/alphajoop/galsen-streak",
   },
   {
+    title: "Open USSD SN",
+    description:
+      "Open database of USSD codes used across mobile services in Senegal. Simplifies access to Mobile Money and telecom interactions in a fragmented ecosystem.",
+    tags: ["CSV", "Next.js", "TypeScript", "Tailwind"],
+    href: "https://github.com/alphajoop/open-ussd-sn",
+  },
+  {
+    title: "Cokkeer",
+    description:
+      "Ultra-fast, zero-dependency syntax highlighter optimized for Bun and TypeScript. Ideal for developers needing lightweight, performant code highlighting.",
+    tags: ["Bun", "TypeScript", "CLI", "Performance"],
+    href: "https://github.com/alphajoop/cokkeer",
+  },
+];
+
+const experiments = [
+  {
     title: "USB Prep",
     description:
       "A lightweight C++ tool that automates USB drive preparation on Windows using DiskPart. Simplifies formatting and setup through a fast, command-driven workflow.",
     tags: ["C++", "Windows", "CLI"],
     href: "https://github.com/alphajoop/usb-prep",
+  },
+  {
+    title: "SnapZip",
+    description:
+      "A fast image compression tool for JPEG and PNG files, built with Rust. Optimizes images without losing quality, ideal for web and mobile projects.",
+    tags: ["Rust", "JPEG", "PNG", "CLI"],
+    href: "https://github.com/alphajoop/snapzip",
   },
 ];
 
@@ -163,11 +180,10 @@ export default function Home() {
           </div>
 
           <Typography variant="body" color="secondary">
-            Design Engineer passionate about building modern, performant web
-            applications. I work across the full frontend stack — React,
-            Next.js, TypeScript — with a sharp focus on interface quality,
-            developer experience, and the invisible details that make software
-            feel right.
+            Design Engineer passionate about building interfaces where every
+            detail matters, and exploring the systems that power them. I craft
+            products with intention and dive deep into the engineering behind
+            modern web experiences.
           </Typography>
 
           <div className={styles.heroLinks}>
@@ -213,11 +229,29 @@ export default function Home() {
 
       <Divider spacing="sm" />
 
-      {/* Projects */}
+      {/* Selected Work */}
       <Section delay={160}>
-        <SectionHeader label="Projects" />
+        <SectionHeader label="Selected Work" />
         <div className={styles.projects}>
-          {projects.map((project) => (
+          {featuredProjects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              href={project.href}
+            />
+          ))}
+        </div>
+      </Section>
+
+      <Divider spacing="sm" />
+
+      {/* Experiments */}
+      <Section delay={240}>
+        <SectionHeader label="Experiments" />
+        <div className={styles.projects}>
+          {experiments.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
@@ -232,7 +266,7 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* Experience */}
-      <Section delay={240}>
+      <Section delay={320}>
         <SectionHeader label="Experience" />
         <div className={styles.experience}>
           {experience.map((item, i) => (
@@ -250,8 +284,8 @@ export default function Home() {
 
       <Divider spacing="sm" />
 
-      {/* Tech Stack */}
-      <Section delay={320}>
+      {/* Technologies */}
+      <Section delay={400}>
         <SectionHeader label="Technologies" />
         <div className={styles.stack}>
           {Object.entries(stack).map(([group, items]) => (
