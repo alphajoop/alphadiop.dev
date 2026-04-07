@@ -21,6 +21,7 @@ import {
 } from "simple-icons";
 import { Divider } from "./components/Divider";
 import { ExperienceItem } from "./components/ExperienceItem";
+import { ProjectCard } from "./components/ProjectCard";
 import { Section } from "./components/Section";
 import { SectionHeader } from "./components/SectionHeader";
 import { SocialLink } from "./components/SocialLink";
@@ -62,6 +63,30 @@ function LogmeinIcon() {
 function GmailIcon() {
   return <BrandIcon icon={siGmail} size={14} />;
 }
+
+const projects = [
+  {
+    title: "Open USSD SN",
+    description:
+      "Open database of USSD codes used across mobile services in Senegal. Simplifies access to Mobile Money and telecom interactions in a fragmented ecosystem.",
+    tags: ["CSV", "Next.js", "TypeScript", "Tailwind"],
+    href: "https://github.com/alphajoop/open-ussd-sn",
+  },
+  {
+    title: "Galsen Streak",
+    description:
+      "A GitHub-style streak tracker redesigned for Senegalese users. Focused on consistency, clean visuals, and a modern, minimal user experience.",
+    tags: ["Hono", "TypeScript", "React"],
+    href: "https://github.com/alphajoop/galsen-streak",
+  },
+  {
+    title: "USB Prep",
+    description:
+      "A lightweight C++ tool that automates USB drive preparation on Windows using DiskPart. Simplifies formatting and setup through a fast, command-driven workflow.",
+    tags: ["C++", "Windows", "CLI"],
+    href: "https://github.com/alphajoop/usb-prep",
+  },
+];
 
 const stack = {
   Frontend: [
@@ -188,8 +213,26 @@ export default function Home() {
 
       <Divider spacing="sm" />
 
-      {/* Experience */}
+      {/* Projects */}
       <Section delay={160}>
+        <SectionHeader label="Projects" />
+        <div className={styles.projects}>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              href={project.href}
+            />
+          ))}
+        </div>
+      </Section>
+
+      <Divider spacing="sm" />
+
+      {/* Experience */}
+      <Section delay={240}>
         <SectionHeader label="Experience" />
         <div className={styles.experience}>
           {experience.map((item, i) => (
@@ -208,7 +251,7 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* Tech Stack */}
-      <Section delay={240}>
+      <Section delay={320}>
         <SectionHeader label="Technologies" />
         <div className={styles.stack}>
           {Object.entries(stack).map(([group, items]) => (

@@ -33,6 +33,11 @@
   margin-top: var(--space-3);
 }
 
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
 .experience {
   display: flex;
   flex-direction: column;
