@@ -66,6 +66,13 @@ function GmailIcon() {
 
 const featuredProjects = [
   {
+    title: "Faktiir",
+    description:
+      "Simple and modern invoice management for freelancers and small businesses. Built with Next.js and TypeScript, featuring real-time invoice generation and payment tracking.",
+    tags: ["Next.js", "Nest.js", "Tanstack", "Tailwind"],
+    href: "https://github.com/alphajoop/faktiir",
+  },
+  {
     title: "Galsen Streak",
     description:
       "A GitHub-style streak tracker redesigned for Senegalese users. Focused on consistency, clean visuals, and a modern, minimal user experience.",
