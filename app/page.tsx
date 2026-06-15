@@ -2,10 +2,7 @@ import {
   siBun,
   siExpress,
   siGit,
-  siGithub,
-  siGmail,
   siHono,
-  siLogmein,
   siMongodb,
   siMysql,
   siNestjs,
@@ -24,6 +21,11 @@ import { ExperienceItem } from "./components/ExperienceItem";
 import { ProjectCard } from "./components/ProjectCard";
 import { Section } from "./components/Section";
 import { SectionHeader } from "./components/SectionHeader";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  OutlookIcon,
+} from "./components/SocialIcons";
 import { SocialLink } from "./components/SocialLink";
 import { StatusBadge } from "./components/StatusBadge";
 import { Tag } from "./components/Tag";
@@ -50,18 +52,6 @@ function BrandIcon({
       <path d={icon.path} />
     </svg>
   );
-}
-
-function GitHubIcon() {
-  return <BrandIcon icon={siGithub} size={14} />;
-}
-
-function LogmeinIcon() {
-  return <BrandIcon icon={siLogmein} size={14} />;
-}
-
-function GmailIcon() {
-  return <BrandIcon icon={siGmail} size={14} />;
 }
 
 const featuredProjects = [
@@ -174,24 +164,30 @@ export default function Home() {
   return (
     <main className={styles.page}>
       {/* Hero */}
-      <Section delay={0}>
+      <Section priority stagger>
         <div className={styles.hero}>
-          <div>
-            <Typography variant="h1">Alpha Diop</Typography>
-            <div className={styles.heroMeta}>
-              <StatusBadge available />
-              <Typography variant="small" color="tertiary">
-                Dakar, Senegal
-              </Typography>
-            </div>
+          <div className={styles.heroIntro}>
+            <Typography variant="h1" className={styles.heroTitle}>
+              Alpha Diop
+            </Typography>
+            <p className={styles.heroRole}>Design Engineer</p>
           </div>
 
-          <Typography variant="body" color="secondary">
-            Design Engineer passionate about building interfaces where every
-            detail matters, and exploring the systems that power them. I craft
-            products with intention and dive deep into the engineering behind
-            modern web experiences.
+          <Typography
+            variant="body"
+            color="secondary"
+            className={styles.heroTagline}
+          >
+            I build interfaces where craft and engineering share the same
+            vocabulary — from pixel-level detail to the systems behind it.
           </Typography>
+
+          <div className={styles.heroMeta}>
+            <StatusBadge available />
+            <Typography variant="small" color="tertiary">
+              Dakar, Senegal
+            </Typography>
+          </div>
 
           <div className={styles.heroLinks}>
             <SocialLink
@@ -202,12 +198,12 @@ export default function Home() {
             <SocialLink
               href="https://linkedin.com/in/alphajoop"
               label="LinkedIn"
-              icon={<LogmeinIcon />}
+              icon={<LinkedInIcon />}
             />
             <SocialLink
               href="mailto:alpha.diop@outlook.com"
-              label="Email"
-              icon={<GmailIcon />}
+              label="Outlook"
+              icon={<OutlookIcon />}
             />
           </div>
         </div>
@@ -216,20 +212,19 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* About */}
-      <Section delay={80}>
+      <Section>
         <SectionHeader label="About" />
         <div className={styles.about}>
           <Typography variant="body" color="secondary">
-            I design and build interfaces where every detail compounds into
-            something that feels right. My background spans frontend
-            development, teaching, and freelance client work — which means I
-            care equally about code quality and communicating clearly.
+            My background spans freelance client work, teaching web fundamentals
+            at Linekode, and frontend roles across product teams in Senegal. I
+            care as much about communicating clearly as about shipping clean
+            code.
           </Typography>
           <Typography variant="body" color="secondary">
-            I believe beauty is leverage in software. Fast, well-crafted
-            interfaces are not a luxury — they are the product. I&apos;m always
-            exploring the JavaScript ecosystem to find better ways to build for
-            a web that keeps evolving.
+            I&apos;m looking for projects where polish is part of the product —
+            not an afterthought. Currently open to freelance and full-time
+            opportunities.
           </Typography>
         </div>
       </Section>
@@ -237,7 +232,7 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* Selected Work */}
-      <Section delay={160}>
+      <Section>
         <SectionHeader label="Selected Work" />
         <div className={styles.projects}>
           {featuredProjects.map((project) => (
@@ -255,7 +250,7 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* Experiments */}
-      <Section delay={240}>
+      <Section>
         <SectionHeader label="Experiments" />
         <div className={styles.projects}>
           {experiments.map((project) => (
@@ -273,7 +268,7 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* Experience */}
-      <Section delay={320}>
+      <Section>
         <SectionHeader label="Experience" />
         <div className={styles.experience}>
           {experience.map((item, i) => (
@@ -292,7 +287,7 @@ export default function Home() {
       <Divider spacing="sm" />
 
       {/* Technologies */}
-      <Section delay={400}>
+      <Section>
         <SectionHeader label="Technologies" />
         <div className={styles.stack}>
           {Object.entries(stack).map(([group, items]) => (
@@ -314,29 +309,30 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <Typography variant="caption" color="tertiary">
-          © {new Date().getFullYear()} Alpha Diop
-        </Typography>
-        <div className={styles.footerLinks}>
-          <a
-            href="https://github.com/alphajoop"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <Typography variant="caption" color="tertiary">
-              GitHub
-            </Typography>
-          </a>
-          <a href="mailto:alpha.diop@outlook.com" aria-label="Email">
-            <Typography variant="caption" color="tertiary">
-              Contact
-            </Typography>
-          </a>
-        </div>
-      </footer>
+      <Section>
+        <footer className={styles.footer}>
+          <Typography variant="caption" color="tertiary">
+            © {new Date().getFullYear()} Alpha Diop
+          </Typography>
+          <div className={styles.footerLinks}>
+            <a
+              href="https://github.com/alphajoop"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <Typography variant="caption" color="tertiary">
+                GitHub
+              </Typography>
+            </a>
+            <a href="mailto:alpha.diop@outlook.com" aria-label="Email">
+              <Typography variant="caption" color="tertiary">
+                Contact
+              </Typography>
+            </a>
+          </div>
+        </footer>
+      </Section>
     </main>
   );
 }

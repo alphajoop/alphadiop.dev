@@ -33,11 +33,11 @@
 }
 
 .available .dot {
-  background-color: #22c55e;
+  background-color: var(--color-accent);
 }
 
 .available .pulse {
-  background-color: #22c55e;
+  background-color: var(--color-accent);
   animation: pulse 2s ease-out infinite;
 }
 

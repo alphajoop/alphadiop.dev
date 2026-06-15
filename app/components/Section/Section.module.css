@@ -1,3 +1,63 @@
 .section {
   width: 100%;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(4px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-reveal),
+    transform var(--duration-reveal) var(--ease-reveal),
+    filter var(--duration-reveal) var(--ease-reveal);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  will-change: auto;
+}
+
+.stagger .hero > * {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(3px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-reveal),
+    transform var(--duration-reveal) var(--ease-reveal),
+    filter calc(var(--duration-reveal) - 80ms) var(--ease-reveal);
+}
+
+.stagger.visible .hero > * {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.stagger.visible .hero > *:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.stagger.visible .hero > *:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.stagger.visible .hero > *:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.stagger.visible .hero > *:nth-child(4) {
+  transition-delay: 210ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .stagger .hero > * {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

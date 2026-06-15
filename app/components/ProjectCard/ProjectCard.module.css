@@ -7,6 +7,7 @@
   border-bottom: 1px solid var(--color-border-subtle);
   text-decoration: none;
   color: inherit;
+  border-radius: var(--radius-sm);
 }
 
 .card:first-child {
@@ -32,6 +33,7 @@
 
 .title {
   flex: 1;
+  transition: color var(--duration-base) var(--ease-out);
 }
 
 .arrow {
@@ -44,12 +46,13 @@
 
 /* Hover states */
 .card:hover .title {
-  color: var(--color-text);
+  color: var(--color-accent-strong);
 }
 
 .card:hover .arrow {
   transform: translate(2px, -2px);
   opacity: 1;
+  color: var(--color-accent);
 }
 
 .wip {

@@ -21,7 +21,7 @@
 }
 
 .item:hover .dot {
-  background-color: var(--color-text);
+  background-color: var(--color-accent);
 }
 
 .line {

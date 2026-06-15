@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,24 +14,29 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#fafaf9",
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alphadiop.dev"),
   title: "Alpha Diop — Design Engineer",
   description:
-    "Design Engineer building modern, performant web applications with React, Next.js, and TypeScript.",
+    "Design Engineer crafting interfaces where detail and engineering compound into something that feels right.",
   openGraph: {
     title: "Alpha Diop — Design Engineer",
     description:
-      "Design Engineer building modern, performant web applications with React, Next.js, and TypeScript.",
+      "Design Engineer crafting interfaces where detail and engineering compound into something that feels right.",
     url: "https://alphadiop.dev",
     siteName: "Alpha Diop",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Alpha Diop — Design Engineer",
     description:
-      "Design Engineer building modern, performant web applications with React, Next.js, and TypeScript.",
+      "Design Engineer crafting interfaces where detail and engineering compound into something that feels right.",
   },
   robots: {
     index: true,

@@ -10,7 +10,32 @@
 .hero {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
+}
+
+.heroIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.heroTitle {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.heroRole {
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.heroTagline {
+  max-width: 42ch;
 }
 
 .heroMeta {
@@ -18,7 +43,7 @@
   align-items: center;
   gap: var(--space-4);
   flex-wrap: wrap;
-  margin-top: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 .heroLinks {
@@ -26,7 +51,7 @@
   align-items: center;
   gap: var(--space-5);
   flex-wrap: wrap;
-  margin-top: var(--space-5);
+  margin-top: var(--space-2);
 }
 
 .about p + p {
@@ -82,11 +107,12 @@
 }
 
 .footerLinks a {
+  border-radius: var(--radius-sm);
   transition: color var(--duration-fast) var(--ease-out);
 }
 
 .footerLinks a:hover span {
-  color: var(--color-text-secondary);
+  color: var(--color-accent-strong);
 }
 
 @media (max-width: 640px) {

@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 export function SectionHeader({ label }: SectionHeaderProps) {
   return (
     <div className={styles.header}>
-      <Typography variant="label" color="tertiary">
+      <Typography variant="label" color="accent">
         {label}
       </Typography>
     </div>

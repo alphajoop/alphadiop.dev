@@ -10,6 +10,7 @@
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
   position: relative;
+  border-radius: var(--radius-sm);
 }
 
 .link::after {
@@ -26,7 +27,7 @@
 }
 
 .link:hover {
-  color: var(--color-text);
+  color: var(--color-accent-strong);
 }
 
 .link:hover::after {
